@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+    <header>
+        <a href="#" class="brand">Travel</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation_item">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="mp.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mp1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mp3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mp4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="mp5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful.<br><span>Island</span></h1>
+            <p>Lorem ipsum dolor sit amet, loconsectetur adipisicing elit. Vel odit ea molestiae earum eveniet tenetur? Odit, cumque quasi. Error possimus iste voluptate officia sint laboriosam, molestiae suscipit. Laboriosam, placeat saepe.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Feel the nature.<span>Relax</span></h1>
+            <p>Lorem ipsum dolor sit amet, loconsectetur adipisicing elit. Vel odit ea molestiae earum eveniet tenetur? Odit, cumque quasi. Error possimus iste voluptate officia sint laboriosam, molestiae suscipit. Laboriosam, placeat saepe.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Camping.<br><span>Enjoy</span></h1>
+            <p>Lorem ipsum dolor sit amet, loconsectetur adipisicing elit. Vel odit ea molestiae earum eveniet tenetur? Odit, cumque quasi. Error possimus iste voluptate officia sint laboriosam, molestiae suscipit. Laboriosam, placeat saepe.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Adventures.<br><span>Off Roads</span></h1>
+            <p>Lorem ipsum dolor sit amet, loconsectetur adipisicing elit. Vel odit ea molestiae earum eveniet tenetur? Odit, cumque quasi. Error possimus iste voluptate officia sint laboriosam, molestiae suscipit. Laboriosam, placeat saepe.</p>
+            <a href="#">Read more</a>
+        </div>
+        <div class="content">
+            <h1>Road Trip.<br><span>Together</span></h1>
+            <p>Lorem ipsum dolor sit amet, loconsectetur adipisicing elit. Vel odit ea molestiae earum eveniet tenetur? Odit, cumque quasi. Error possimus iste voluptate officia sint laboriosam, molestiae suscipit. Laboriosam, placeat saepe.</p>
+            <a href="#">Read more</a>
+        </div>
+
+        <div class="media_icon">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slide-navigation">
+            <div class="nav-btn active"> </div>
+            <div class="nav-btn"> </div>
+            <div class="nav-btn"> </div>
+            <div class="nav-btn"> </div> 
+            <div class="nav-btn"> </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        const menubtn =document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menubtn.addEventListener("click", () => {
+         menubtn.classList.toggle("active");
+         navigation.classList.toggle("active");
+        });
+
+        // for vedio slider
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+ 
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+             btn.classList.remove("active");
+            });
+            slides.forEach((slide) => {
+             slide.classList.remove("active");
+            });
+            contents.forEach((content) => {
+             content.classList.remove("active");
+            });
+         btns[manual].classList.add("active");
+         slides[manual].classList.add("active");
+         contents[manual].classList.add("active");
+
+         }
+        btns.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+        sliderNav(i);
+         });
+        });
+    </script>
+</body>
+</html>
